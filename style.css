@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(189, 189, 189);
+}
+
+.calc {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.col-3 {
+    background-color: rgb(33, 33, 33);
+    color: white;
+    width: 100px;
+    height: 100px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.col-3:hover {
+    background-color: rgb(41, 153, 134);
+}
+
+.op {
+    background-color: rgb(117, 117, 117);
+}
+
+.nums {
+    text-align: left;
+    background-color: white;
+    color: black;
+}
+
+.nums div {
+    margin-bottom: 20px;
+}
+
+#ac {
+    background-color: rgb(41, 153, 134);
+}
+
+body input {
+    border: none;
+    outline: none;
+    font-size: 20px;
+}

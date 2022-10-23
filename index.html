@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculator</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="calc" name="calc1">
+            <!-- <input class="nums" id="pastNum" type="text" name="pastnum"> -->
+            <div class="row">
+
+                <input class="col-9 nums" id="curntNum" name="curntnum" type="text">
+                <div class="col-3" onclick="ac()" id="ac">AC</div>
+            </div>
+            <div class="row">
+                <div class="col-3 num" onclick="num(this)">9</div>
+                <div class="col-3 num" onclick="num(this)">8</div>
+                <div class="col-3 num" onclick="num(this)">7</div>
+                <div class="col-3 num op" onclick="calc(this)" id="add">+</div>
+            </div>
+            <div class="row">
+                <div class="col-3 num" onclick="num(this)">4</div>
+                <div class="col-3 num" onclick="num(this)">5</div>
+                <div class="col-3 num" onclick="num(this)">6</div>
+                <div class="col-3 num op" onclick="calc(this)" id="min">-</div>
+            </div>
+            <div class="row">
+                <div class="col-3 num" onclick="num(this)">1</div>
+                <div class="col-3 num" onclick="num(this)">2</div>
+                <div class="col-3 num" onclick="num(this)">3</div>
+                <div class="col-3 num op" onclick="calc(this)" id="div">/</div>
+            </div>
+            <div class="row">
+                <div class="col-3 num" onclick="num(this)">.</div>
+                <div class="col-3 num" onclick="num(this)">0</div>
+                <div class="col-3 num" onclick="eq()" id="equal">=</div>
+                <div class="col-3 num op" onclick="calc(this)" id="mulit">*</div>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    let equal = document.querySelector("#equal")
+    let curntNum = document.querySelector("#curntNum")
+    let pastNum = document.querySelector("#pastNum")
+
+    function num(e) {
+
+        curntNum.value += e.textContent
+
+    }
+
+    function calc(e) {
+
+        if (curntNum.value != "") {
+            // let arry = []
+            // let cu = curntNum.value
+            // for (let l = 0; l < cu.length; l++) {
+            //     arry.push(cu[l])
+            //     console.log(arry)
+            //     if (arry.includes("+")) {
+            //         eval(pastNum.value)
+            //     }
+
+            // }
+            // pastNum.value += curntNum.value + e.textContent
+            // console.log()
+            curntNum.value += e.textContent
+
+        }
+
+    }
+
+    function eq() {
+        curntNum.value = eval(curntNum.value)
+    }
+
+    function ac() {
+        pastNum.value = ""
+        curntNum.value = ""
+    }
+</script>
+
+</html>
